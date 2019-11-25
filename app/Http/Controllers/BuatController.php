@@ -24,7 +24,7 @@ class BuatController extends Controller
         [
             'judul' => 'required',
             'jumlah' => 'required',
-            'file_proposal' => 'required'
+            // 'file_proposal' => 'required'
         ]
         );
 
@@ -32,12 +32,13 @@ class BuatController extends Controller
             return redirect()->route('buat')
                              ->withErrors($validate);
         }
+        else {
+            $upload->judul = $req->judul;
+            $upload->jumlah = $req->jumlah;
+            $upload->save();
+    
+            return redirect()->route('buat');
+        }
 
-        $upload->judul = $req->judul;
-        $upload->jumlah = $req->jumlah;
-        $upload->jumlah = $req->jumlah;
-        $upload->save();
-
-        return redirect()->route('buat');
     }
 }

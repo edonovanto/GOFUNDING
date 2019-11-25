@@ -13,23 +13,20 @@
                 {{csrf_field()}}
 
                   <div class="card-body">
-                    @if($errors->has('judul'))
-                        <span class="invalid-feedback" role="alert">
-                          <strong>Judul tidak boleh dikosongkan</strong>
-                        </span>
-                    @endif
                     <div class="form-group">
                       <label for="exampleInputEmail1">Judul Proposal</label>
                       <input type="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul proposal" name="judul">
+                      
+                      @if($errors->has('judul'))
+                      <div class="text-danger">
+                        {{$errors->first('judul')}}
+                      </div>
+                      @endif
+
                     </div>
                     
 
                     <div class="input-group">
-                    @if($errors->has('judul'))
-                        <span class="invalid-feedback" role="alert">
-                          <strong>Jumlah tidak boleh dikosongkan</strong>
-                        </span>
-                    @endif
                       <div class="input-group-prepend">
                         <span class="input-group-text">Rp</span>
                       </div>
@@ -38,6 +35,12 @@
                         <span class="input-group-text">,00</span>
                       </div>
                     </div>
+                    
+                      @if($errors->has('jumlah'))
+                      <div class="text-danger">
+                        {{$errors->first('jumlah')}}
+                      </div>
+                      @endif
 
                     <br>
 
