@@ -35,6 +35,9 @@ Route::get('/setting', 'HomeController@setting')->name('setting');
 // BuatController
 Route::get('/buat', 'BuatController@index')->name('buat');
 Route::post('/buat/upload', 'BuatController@upload')->name('upload');
+Route::get('/buat/{proposalId}', 'BuatController@editProposal')->name('editProposal');
 
 // HistoryController
 Route::get('/histori', 'HistoryController@index')->name('histori');
+Route::get('/histori/ubah', 'HistoryController@ubah')->name('ubah');
+

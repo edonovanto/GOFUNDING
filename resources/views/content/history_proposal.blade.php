@@ -35,6 +35,11 @@
                             <td>{{ $row->jumlah }}</td>
                             <td>{{ $row->created_at }}</td>
                             <!-- <td><span class="tag tag-success">Approved</span></td> -->
+                            <td>
+                            <a href="{{route('editProposal', ['proposalId' => $row->id])}}">
+                                <button type="button" class="btn btn-warning float-right" style="margin-right: 5px;">Lihat PDF</button>
+                            </a>
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                         @endforeach

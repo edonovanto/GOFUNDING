@@ -21,10 +21,6 @@ class HistoryController extends Controller
                     ->where('judul', 'LIKE', '%'.$search.'%')
                     ->paginate(10);
 
-        foreach($upload as $row){
-            echo $row->judul. "<br>";
-        }
-
         return view('content.history_proposal',['upload' => $upload]);
     }
 }
