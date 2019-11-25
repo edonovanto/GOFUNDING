@@ -1,21 +1,19 @@
 @extends('layouts.home', ['module' => 'Upload'])
 
 @section('content_dashboard')
+<link rel="stylesheet" href="/css/history.css">
     <div class="container">
     <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">History Pengajuan Proposal</h3>
-
                 <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                  </div>
+                <div class="input-group">
+                    <form action="{{ route('histori') }}" method="GET">
+                    <input type="text" class="form-control" placeholder="Cari Judul" name="search">
+                    </form>
+                </div>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -24,7 +22,7 @@
                     <thead>
                         <tr>
                             <th>Judul Proposal</th>
-                            <th>Jumlah Dana</th>
+                            <th>Dana Diajukan</th>
                             <th>Tanggal Pengajuan</th>
                             <!-- <th>Status</th> -->
                             <th>&nbsp;</th>
@@ -49,6 +47,14 @@
           </div>
         </div>
     </div>
+
+    <div class="row">
+          <div class="col-12">
+              {{ $upload->links() }}
+          </div>
+    </div>
+
+
 
 <script>
     export default {

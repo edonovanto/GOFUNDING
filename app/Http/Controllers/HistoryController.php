@@ -13,8 +13,13 @@ class HistoryController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
-        $upload = Db::table('upload')->get();
+    public function index(Request $req){
+
+        $search = $req->search;
+
+        $upload = Db::table('upload')
+                    ->where('judul', 'LIKE', '%'.$search.'%')
+                    ->paginate(10);
 
         foreach($upload as $row){
             echo $row->judul. "<br>";
