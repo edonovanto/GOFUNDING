@@ -189,6 +189,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li> 
           <li class="nav-item">
+            <a href="{{route('histori') }}" class="nav-link">
+              <i class="fas fa-copy"></i>
+              <p>
+                Histori Pengajuan
+              </p>
+            </a>
+          </li> 
+          <li class="nav-item">
             <a href="{{route('profile')}}" class="nav-link">
             <i class="fas fa-user"></i>
               <p>

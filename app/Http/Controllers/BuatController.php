@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\models\Upload;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class BuatController extends Controller
 {
@@ -30,7 +31,8 @@ class BuatController extends Controller
 
         if($validate->fails()){
             return redirect()->route('buat')
-                             ->withErrors($validate);
+                             ->withErrors($validate)
+                             ->withInput();
         }
         else {
             $upload->judul = $req->judul;

@@ -29,8 +29,12 @@ Auth::routes();
 Route::get('/welcome', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@home')->name('home2');
 Route::get('/profile', 'HomeController@profile')->name('profile');
-Route::get('/buat', 'HomeController@buat')->name('buat');
+Route::get('/histori', 'HomeController@histori')->name('histori');
 Route::get('/setting', 'HomeController@setting')->name('setting');
 
 // BuatController
+Route::get('/buat', 'BuatController@index')->name('buat');
 Route::post('/buat/upload', 'BuatController@upload')->name('upload');
+
+// HistoryController
+Route::get('/histori', 'HistoryController@index')->name('histori');

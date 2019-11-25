@@ -15,7 +15,7 @@
                   <div class="card-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Judul Proposal</label>
-                      <input type="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul proposal" name="judul">
+                      <input type="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul proposal" name="judul" value="{{ old('judul')}}">
                       
                       @if($errors->has('judul'))
                       <div class="text-danger">
@@ -30,7 +30,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text">Rp</span>
                       </div>
-                      <input type="text" class="form-control" placeholder="Masukkan jumlah yang diajukan" name="jumlah">
+                      <input type="text" class="form-control" placeholder="Masukkan jumlah yang diajukan" name="jumlah" value="{{ old('jumlah')}}">
                       <div class="input-group-append">
                         <span class="input-group-text">,00</span>
                       </div>

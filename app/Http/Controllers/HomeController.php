@@ -41,6 +41,11 @@ class HomeController extends Controller
         return view('content.buat_proposal');
     }
 
+    public function histori()
+    {
+        return view('content.history_proposal');
+    }
+
     public function setting()
     {
         return view('content.setting');
