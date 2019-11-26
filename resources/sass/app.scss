@@ -3,42 +3,6 @@
 
 // Variables
 @import 'variables';
-$fa-font-path:"../webfonts";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-@import '~admin-lte/dist/css/adminlte.css';
-
-// @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-// @import "~@fortawesome/fontawesome-free/scss/solid.scss";
-// @import "~@fortawesome/fontawesome-free/scss/brands.scss";
-
-.router-link-exact-active{
-    background-color: #26add6;
-    color: #ffffff !important;
-    font-weight: bold;
-}
-
-.buat {
-    margin: 10px !important;
-}
-
-.card-header{
-    background-color: #26add6 !important;
-    height: 40px;
-    position: relative;
-}
-
-.card-title{
-    color: #ffffff !important;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-button.btn.btn-success.float-right{
-    margin-top: 5px;
-}
