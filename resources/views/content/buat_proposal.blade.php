@@ -16,9 +16,7 @@
                     <div class="form-group">
                       <label>Judul Proposal</label>
 
-                      @foreach($upload as $row)
-                      <input type="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul proposal" name="judul" value="{{ old('judul', $row->judul)}}">
-                      @endforeach
+                      <input type="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul proposal" name="judul" value="{{ old('judul') }}">
 
                       @if($errors->has('judul'))
                       <div class="text-danger">
@@ -33,7 +31,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text">Rp</span>
                       </div>
-                      <input type="text" class="form-control" placeholder="Masukkan jumlah yang diajukan" name="jumlah" value="{{ old('jumlah', $upload->jumlah)}}">
+                      <input type="text" class="form-control" placeholder="Masukkan jumlah yang diajukan" name="jumlah" value="{{ old('jumlah') }}">
                       <div class="input-group-append">
                         <span class="input-group-text">,00</span>
                       </div>

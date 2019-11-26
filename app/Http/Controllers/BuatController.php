@@ -7,6 +7,7 @@ use App\models\Upload;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class BuatController extends Controller
 {
@@ -16,6 +17,10 @@ class BuatController extends Controller
     }
 
     public function index(){
+        if(!Gate::allows('isSiswa')){
+            abort(404,"Maaf, anda tidak memiliki akses");
+        }
+
         return view('content.buat_proposal');
     }
 
