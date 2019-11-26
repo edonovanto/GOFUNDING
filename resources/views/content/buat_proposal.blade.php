@@ -1,6 +1,9 @@
 @extends('layouts.home',['module' => 'Upload'])
 
 @section('content_dashboard')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+
       <div class="container">
           <div class="card card-primary">
                 <div class="card-header">
@@ -8,7 +11,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="{{route('upload')}}">
+                <form role="form" method="post" action="{{route('upload')}}" enctype="multipart/form-data">
 
                 {{csrf_field()}}
 
@@ -46,28 +49,49 @@
                     <br>
 
                     <div class="form-group">
-                      <label for="exampleInputFile">File input</label>
-                      <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="exampleInputFile" name="file_proposal">
-                          <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      <label for="exampleInputFile">File input (max 2mb)</label>
+                        <div class="">
+                          <input type="file" class="" name="file_proposal">
                         </div>
-                        <div class="input-group-append">
-                          <span class="input-group-text" id="">Upload</span>
+                        @if($errors->has('file_proposal'))
+                        <div class="text-danger">
+                        {{$errors->first('file_proposal')}}
                         </div>
-                      </div>
+                        @endif
                     </div>
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Saya telah mengisi format pengisian dengan benar</label>
+                      <label class="form-check-label" for="exampleCheck1">Saya telah mengisi format pengisian dengan benar </label>
                     </div>
                   </div>
                   <!-- /.card-body -->
 
-                    <button type="submit" class="btn btn-success float-right buat">Ajukan</button>
+                    <button type="submit" class="btn btn-success float-right buat" name="button">Ajukan</button>
                 </form>
               </div>
+              
+      @if(Session::has('message'))
+    var type = "{{ Session::get('alert-type', 'info') }}";
+    switch(type){
+        case 'info':
+            toastr.info("{{ Session::get('message') }}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{ Session::get('message') }}");
+            break;
+
+        case 'success':
+            toastr.success("{{ Session::get('message') }}");
+            break;
+
+        case 'error':
+            toastr.error("{{ Session::get('message') }}");
+            break;
+    }
+  @endif
       </div>
+
 
   <script>
       export default {

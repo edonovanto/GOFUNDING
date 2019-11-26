@@ -30,7 +30,7 @@ class BuatController extends Controller
         [
             'judul' => 'required',
             'jumlah' => 'required',
-            // 'file_proposal' => 'required'
+            'file_proposal' => 'required|pdf|2048'
         ]
         );
 
@@ -40,11 +40,32 @@ class BuatController extends Controller
                              ->withInput();
         }
         else {
-            $upload->judul = $req->judul;
-            $upload->jumlah = $req->jumlah;
-            $upload->save();
-    
+            $path=$req->file_proposal;
+            $nama_proposal = time().".".$path->extension();
+            $tujuan_upload = 'upload';
+            $path->move($tujuan_upload,$nama_proposal);
+
+
+            Upload::create([
+                'judul' => $req->judul,
+                'jumlah' => $req->jumlah,
+                'file_proposal' => $nama_proposal
+            ]);
+
+            $notification = array(
+                'message' => 'Post created successfully!',
+                'alert-type' => 'success'
+            );            
+
+            return Redirect::to('buat')->with($notification);
+
+            // $upload->judul = $req->judul;
+            // $upload->jumlah = $req->jumlah;
+            // $upload->file_proposal = $req->$nama_proposal;
+            // $upload->save();
+            
             return redirect()->route('buat');
+            echo $path;
         }
 
     }
