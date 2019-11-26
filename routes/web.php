@@ -41,3 +41,7 @@ Route::get('/buat/{proposalId}', 'BuatController@editProposal')->name('editPropo
 Route::get('/histori', 'HistoryController@index')->name('histori');
 Route::get('/histori/ubah', 'HistoryController@ubah')->name('ubah');
 
+// CheckController
+Route::get('/check', 'CheckController@index')->name('check');
+Route::get('/check/{proposalId}', 'CheckController@check')->name('download');
+
