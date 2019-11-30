@@ -30,7 +30,7 @@ class BuatController extends Controller
         [
             'judul' => 'required',
             'jumlah' => 'required',
-            'file_proposal' => 'required|pdf|2048'
+            'file_proposal' => 'required'
         ]
         );
 
@@ -53,7 +53,7 @@ class BuatController extends Controller
             ]);
 
             $notification = array(
-                'message' => 'Post created successfully!',
+                'message' => 'Proposal berhasil diajukan!',
                 'alert-type' => 'success'
             );            
 
@@ -64,7 +64,7 @@ class BuatController extends Controller
             // $upload->file_proposal = $req->$nama_proposal;
             // $upload->save();
             
-            return redirect()->route('buat');
+            // return redirect()->route('buat');
             echo $path;
         }
 

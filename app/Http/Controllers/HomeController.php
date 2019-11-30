@@ -34,9 +34,9 @@ class HomeController extends Controller
 
     public function profile()
     {
-        if(!Gate::allows('isSiswa')){
-            abort(404,"Maaf, anda tidak memiliki akses");
-        }
+            if(!Gate::allows('isSiswa')){
+                abort(404,"Maaf, anda tidak memiliki akses");
+            }
         return view('content.profile');
     }
 
