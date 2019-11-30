@@ -29,7 +29,7 @@ class CheckController extends Controller
     public function check(){
     	$downloads=DB::table('upload')->get();
     	return view('content.check',compact('upload'));
-    }
+    }   
 
 
     // public function check($id){

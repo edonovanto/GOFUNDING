@@ -1,6 +1,7 @@
 @extends('layouts.home',['module' => 'Upload'])
 
 @section('content_dashboard')
+
 <link rel="stylesheet" href="/css/history.css">
     <div class="container">
     <div class="row">
@@ -40,6 +41,11 @@
                                 <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;" name="download">Download PDF</button>
                             </a>
                             </td>
+                            <td>
+                            <button type="button" class="fas fa-times btn btn-success" data-toggle="modal" data-target="#terima">Terima</button>
+                            <button type="button" class="fas fa-times btn btn-danger">Tolak</button>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#revisi" data-whatever="@getbootstrap">Revisi</button>
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                         @endforeach
@@ -59,6 +65,68 @@
           </div>
     </div>
 
+
+    <!-- Modal Revisi-->
+    <form role="form" method="post" action="{{route('revisi')}}" enctype="multipart/form-data">
+
+    {{csrf_field()}}
+
+    <div class="modal fade" id="revisi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informasi Revisi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label" name>Pesan (Optional):</label>
+                    <textarea class="form-control" id="message-text" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Upload Proposal Revisi</label>
+                    <br>
+                    <input type="file" class="" name="revisi_proposal">
+                    @if($errors->has('revisi_proposal'))
+                      <div class="text-danger">
+                        {{$errors->first('revisi_proposal')}}
+                      </div>
+                    @endif
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" name="button">Kirim Revisi</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <!-- Modal Terima -->
+    <div class="modal fade" id="terima" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Proposal telah diterima dan diteruskan ke Dosen
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
 
 
 <script>
