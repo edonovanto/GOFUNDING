@@ -46,5 +46,6 @@ Route::get('/check', 'CheckController@index')->name('check');
 Route::get('/check/{proposalId}', 'CheckController@check')->name('download');
 
 // RevisiController
-Route::get('/revisi', 'RevisiController@index')->name('revisi_siswa');
+Route::get('/revisi_siswa', 'RevisiController@index')->name('revisi_siswa');
 Route::post('/check/revisi/', 'RevisiController@revisi')->name('revisi');
+Route::get('/check/revisi/{proposalId}', 'RevisiController@form_revisi')->name('revisiProposal');

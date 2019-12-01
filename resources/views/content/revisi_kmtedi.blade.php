@@ -22,6 +22,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
+                            <th>File Proposal</th>
                             <th>Judul Proposal</th>
                             <th>Dana Diajukan</th>
                             <th>Tanggal Pengajuan</th>
@@ -30,27 +31,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($upload as $row)
                         <tr>
-                            <td>{{ $row->judul }}</td>             
-                            <td>{{ $row->jumlah }}</td>
-                            <td>{{ $row->created_at }}</td>
+                            <td><embed src="/upload/{{$upload->file_proposal}}" style="width: 100%;height: 900px;border: none;" /></td>
+                            <td>{{ $upload->judul }}</td>             
+                            <td>{{ $upload->jumlah }}</td>
+                            <td>{{ $upload->created_at }}</td>
                             <!-- <td><span class="tag tag-success">Approved</span></td> -->
                             <td>
-                            <a href="upload/{{$row->file_proposal}}" download="{{$row->file_proposal}}">
-                                <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;" name="download">Download PDF</button>
+                            <a href="{{route('editProposal', ['proposalId' => $upload->id])}}">
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#revisi" data-whatever="@getbootstrap">Revisi</button>
                             </a>
                             </td>
-                            <td>
-                            <button type="button" class="fas fa-times btn btn-success" data-toggle="modal" data-target="#terima">Terima</button>
-                            <button type="button" class="fas fa-times btn btn-danger">Tolak</button>
-                            <a href="{{route('revisiProposal', ['proposalId' => $row->id])}}">
-                                <button type="button" class="btn btn-warning">Revisi</button>
-                            </a>
-                            </td>
-                            <td>&nbsp;</td>
                         </tr>
-                        @endforeach
                     </tbody>
                 </table>
               </div>
@@ -61,11 +53,46 @@
         </div>
     </div>
 
-    <div class="row">
-          <div class="col-12">
-              {{ $upload->links() }}
-          </div>
+    <!-- Modal Revisi-->
+    <form role="form" method="post" action="{{route('revisi')}}" enctype="multipart/form-data">
+
+    {{csrf_field()}}
+
+    <div class="modal fade" id="revisi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informasi Revisi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="form-group">
+                    <label for="message-text" class="col-form-label" name>Pesan (Optional):</label>
+                    <textarea class="form-control" id="message-text" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Upload Proposal Revisi</label>
+                    <br>
+                    <input type="file" class="" name="revisi_proposal">
+                    @if($errors->has('revisi_proposal'))
+                      <div class="text-danger">
+                        {{$errors->first('revisi_proposal')}}
+                      </div>
+                    @endif
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" name="button">Kirim Revisi</button>
+            </div>
+            </div>
+        </div>
     </div>
+    </form>
 
     <!-- Modal Terima -->
     <div class="modal fade" id="terima" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -25,8 +25,19 @@ class RevisiController extends Controller
         $table2 = DB::table('revisi_proposal')->get();
 
         $table3 = $table1->merge($table2);
-        
-        return view('content.revisi_siswa');
+        echo $table3;
+
+        //return view('content.revisi_siswa');
+    }
+
+    public function form_revisi($proposalId, Upload $upload){
+        $upload = $upload->where('id', $proposalId)
+                        ->first();
+
+        //echo $upload;
+
+        //parameter dalam compact adalah variabel
+        return view('content.revisi_kmtedi',compact('upload'));
     }
 
     public function revisi(Request $req, Revisi $revisi){

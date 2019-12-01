@@ -8,5 +8,5 @@ class Revisi extends Model
 {
     protected $table = "revisi_proposal";
 
-    protected $fillable=['message','revisi_proposal'];
+    protected $fillable=['judul','message','revisi_proposal'];
 }
