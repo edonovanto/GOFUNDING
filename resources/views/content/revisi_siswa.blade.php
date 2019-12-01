@@ -22,9 +22,8 @@
                     <thead>
                         <tr>
                             <th>Judul Proposal</th>
-                            <th>Dana Diajukan</th>
-                            <th>Tanggal Pengajuan</th>
-                            <th>Status</th>
+                            <th>Pesan Revisi</th>
+                            <th>Tanggal Revisi</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
@@ -32,12 +31,11 @@
                         @foreach($upload as $row)
                         <tr>
                             <td>{{ $row->judul }}</td>             
-                            <td>{{ $row->jumlah }}</td>
+                            <td>{{ $row->message }}</td>
                             <td>{{ $row->created_at }}</td>
-                            <td><span class="tag tag-success">{{ $row->status }}</span></td>
                             <td>
-                            <a href="{{route('editProposal', ['proposalId' => $row->id])}}">
-                                <button type="button" class="btn btn-warning float-right" style="margin-right: 5px;">Edit PDF</button>
+                            <a href="revisi/{{$row->revisi_proposal}}" download="{{$row->revisi_proposal}}">
+                                <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;" name="download">Download Revisi</button>
                             </a>
                             </td>
                             <td>&nbsp;</td>
@@ -58,8 +56,6 @@
               {{ $upload->links() }}
           </div>
     </div>
-
-
 
 <script>
     export default {

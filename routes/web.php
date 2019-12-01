@@ -47,5 +47,6 @@ Route::get('/check/{proposalId}', 'CheckController@check')->name('download');
 
 // RevisiController
 Route::get('/revisi_siswa', 'RevisiController@index')->name('revisi_siswa');
-Route::post('/check/revisi/', 'RevisiController@revisi')->name('revisi');
+Route::post('/check/upload', 'RevisiController@revisi')->name('revisi');
 Route::get('/check/revisi/{proposalId}', 'RevisiController@form_revisi')->name('revisiProposal');
+Route::get('/check/download/{proposalId}', 'RevisiController@check')->name('download');
