@@ -180,6 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li> 
+          @can('isSiswa')
           <li class="nav-item">
             <a href="{{route('buat') }}" class="nav-link">
               <i class="fas fa-copy"></i>
@@ -188,6 +189,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li> 
+          @endcan
+          @can('isSiswa')
           <li class="nav-item">
             <a href="{{route('histori') }}" class="nav-link">
               <i class="fas fa-copy"></i>
@@ -196,6 +199,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li> 
+          @endcan
+          @can('isSiswa')
+          <li class="nav-item">
+            <a href="{{route('revisi_siswa') }}" class="nav-link">
+              <i class="fas fa-copy"></i>
+              <p>
+                Revisi Proposal
+              </p>
+            </a>
+          </li> 
+          @endcan
+          @can('isSiswa')
           <li class="nav-item">
             <a href="{{route('profile')}}" class="nav-link">
             <i class="fas fa-user"></i>
@@ -204,6 +219,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li> 
+          @endcan
+          <!-- @can('isDosen')
+          <li class="nav-item">
+            <a href="{{route('approve')}}" class="nav-link">
+            <i class="fas fa-user"></i>
+              <p>
+                Profile
+              </p>
+            </a>
+          </li> 
+          @endcan -->
+          @cannot('isSiswa')
+          <li class="nav-item">
+            <a href="{{route('check')}}" class="nav-link">
+            <i class="fas fa-user"></i>
+              <p>
+                Proposal Diajukan
+              </p>
+            </a>
+          </li> 
+          @endcan
           <li class="nav-item">
             <a href="{{route('setting')}}" class="nav-link">
             <i class="fas fa-cog"></i>

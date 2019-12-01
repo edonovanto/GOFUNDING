@@ -23,4 +23,11 @@ class HistoryController extends Controller
 
         return view('content.history_proposal',['upload' => $upload]);
     }
+  
+    public function editProposal($proposalId, Upload $upload){
+        $upload = $upload->where('id', $proposalId)
+                         ->first();
+
+        return view('content.edit_proposal', compact('upload'));
+    }
 }
