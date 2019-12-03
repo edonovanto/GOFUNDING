@@ -34,7 +34,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="{{route('upload')}}" enctype="multipart/form-data">
+                <form role="form" method="post" action="{{route('upload')}}" enctype="multipart/form-data" onsubmit="return checkForm(this);">
 
                 {{csrf_field()}}
 
@@ -83,7 +83,7 @@
                         @endif
                     </div>
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <input type="checkbox" class="form-check-input required" id="exampleCheck1" name="terms">
                       <label class="form-check-label" for="exampleCheck1">Saya telah mengisi format pengisian dengan benar </label>
                     </div>
                   </div>
@@ -102,6 +102,20 @@
           }
       }
   </script>
+
+<script>
+
+function checkForm(form)
+{
+  if(!form.terms.checked) {
+    alert("Centang box bila telah mengisis format dengan benar");
+    form.terms.focus();
+    return false;
+  }
+  return true;
+}
+
+</script>
 
   <script>
   $(document).ready(function(){

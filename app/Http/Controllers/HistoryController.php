@@ -30,4 +30,11 @@ class HistoryController extends Controller
 
         return view('content.edit_proposal', compact('upload'));
     }
+
+    public function hapusProposal($proposalId, Upload $upload){
+        $upload->where('id', $proposalId)
+                         ->delete();
+
+        return view('content.edit_proposal', compact('upload'));
+    }
 }

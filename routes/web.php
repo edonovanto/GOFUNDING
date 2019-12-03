@@ -40,6 +40,7 @@ Route::post('/buat/upload', 'BuatController@upload')->name('upload');
 // HistoryController
 Route::get('/histori', 'HistoryController@index')->name('histori');
 Route::get('/histori/edit/{proposalId}', 'HistoryController@editProposal')->name('editProposal');
+Route::get('/histori/hapus/{proposalId}', 'HistoryController@hapusProposal')->name('hapusProposal');
 
 // CheckController
 Route::get('/check', 'CheckController@index')->name('check');

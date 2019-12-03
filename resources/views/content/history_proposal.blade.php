@@ -36,9 +36,12 @@
                             <td>{{ $row->created_at }}</td>
                             <td><span class="tag tag-success">{{ $row->status }}</span></td>
                             <td>
-                            <a href="{{route('editProposal', ['proposalId' => $row->id])}}">
-                                <button type="button" class="btn btn-warning float-right" style="margin-right: 5px;">Edit PDF</button>
+                            <a href="{{route('hapusProposal', ['proposalId' => $row->id])}}">
+                                <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;">Batalkan Pengajuan</button>
                             </a>
+                            <!-- <a href="{{route('editProposal', ['proposalId' => $row->id])}}">
+                                <button type="button" class="btn btn-warning float-right" style="margin-right: 5px;">Edit PDF</button>
+                            </a> -->
                             </td>
                             <td>&nbsp;</td>
                         </tr>
