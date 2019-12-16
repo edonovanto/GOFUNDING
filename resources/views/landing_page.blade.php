@@ -60,7 +60,7 @@
 					</h1>
 					<!-- <h1 class="mb-4">Attorneys Fighting For Your Freedom</h1> -->
 					<p class="mb-4">Disini Kami hadir untuk membantu anda mengurus masalah proposal pengajuan dana bantuan. Temukan kenyamanan anda melalui website kami.</p>
-					<p><a href="#" class="btn btn-primary mr-md-4 py-2 px-4">Daftar Sekarang <span class="ion-ios-arrow-forward"></span></a></p>
+					<p><a href="https://drive.google.com/uc?export=download&id=17ogV2b5pp5uYNAbgtn4DKgyipEP_ZPCF" class="btn btn-primary mr-md-4 py-2 px-4">Download Template <span class="ion-ios-arrow-forward"></span></a></p>
 				</div>
 			</div>
 		</div>
@@ -122,108 +122,6 @@
 			</div>
 		</div>
 	</section>	
-
-	<section class="ftco-section ftco-no-pt">
-		<div class="container-fluid px-md-5">
-			<div class="row">
-				<div class="col-lg-3 col-sm-6">
-					<div class="block-2 ftco-animate">
-						<div class="flipper">
-							<div class="front" style="background-image: url('images/');">
-								<div class="box">
-									<h2>Roy</h2>
-									<p>Mahasiswa Komsi</p>
-								</div>
-							</div>
-							<div class="back">
-								<!-- back content -->
-								<blockquote>
-									<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-								</blockquote>
-								<div class="author d-flex">
-									<div class="image align-self-center">
-										<img src="images/" alt="">
-									</div>
-									<div class="name align-self-center ml-3">Roy <span class="position">Mahasiswa komsi</span></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="block-2 ftco-animate">
-						<div class="flipper">
-							<div class="front" style="background-image: url('images/');" >
-								<div class="box">
-									<h2>Roy</h2>
-									<p>Mahasiswa kelas B</p>
-								</div>
-							</div>
-							<div class="back">
-								<!-- back content -->
-								<blockquote>
-									<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-								</blockquote>
-								<div class="author d-flex">
-									<div class="image align-self-center" >
-										<img src="images/" alt="" >
-									</div>
-									<div class="name align-self-center ml-3">Royandi Nicolas <span class="position">Mahasiswa Kelas B</span></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="block-2 ftco-animate">
-						<div class="flipper">
-							<div class="front" style="background-image: url(/images/person_3.jpg);">
-								<div class="box">
-									<h2>Tony Henderson</h2>
-									<p>Criminal Defense</p>
-								</div>
-							</div>
-							<div class="back">
-								<!-- back content -->
-								<blockquote>
-									<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-								</blockquote>
-								<div class="author d-flex">
-									<div class="image align-self-center">
-										<img src="images/person_3.jpg" alt="">
-									</div>
-									<div class="name align-self-center ml-3">Tony Henderson <span class="position">Criminal Defense</span></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6">
-					<div class="block-2 ftco-animate">
-						<div class="flipper">
-							<div class="front" style="background-image: url(/images/person_4.jpg);">
-								<div class="box">
-									<h2>Jack Smith</h2>
-									<p>Insurance Lawyer</p>
-								</div>
-							</div>
-							<div class="back">
-								<!-- back content -->
-								<blockquote>
-									<p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text &rdquo;</p>
-								</blockquote>
-								<div class="author d-flex">
-									<div class="image align-self-center">
-										<img src="images/person_4.jpg" alt="">
-									</div>
-									<div class="name align-self-center ml-3">Jack Smith <span class="position">Insurance Lawyer</span></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb" style="background-color: #6646a3">
 		<div class="container" style="

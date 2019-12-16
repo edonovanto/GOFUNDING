@@ -7,7 +7,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">History Pengajuan Proposal</h3>
+                <h3 class="card-title">Proposal Revisi</h3>
                 <div class="card-tools">
                 <div class="input-group">
                     <form action="{{ route('histori') }}" method="GET">
