@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\models\Upload;
 use Illuminate\Support\Facades\DB;
 
@@ -31,10 +32,20 @@ class HistoryController extends Controller
         return view('content.edit_proposal', compact('upload'));
     }
 
+    public function uploadEditProposal(Request $request, Upload $upload){
+        $up = $upload::find($request->id);
+        $up->judul = $request->judul;
+        $up->jumlah = $request->jumlah;
+        $up->file_proposal = $request->file_proposal;
+        $up->save();
+    	return Redirect::to('histori');
+    }
+
     public function hapusProposal($proposalId, Upload $upload){
         $upload->where('id', $proposalId)
                          ->delete();
-
-        return view('content.edit_proposal', compact('upload'));
+        
+        return Redirect::to('histori');
+        //return view('content.edit_proposal', compact('upload'));
     }
 }

@@ -40,10 +40,13 @@ Route::post('/buat/upload', 'BuatController@upload')->name('upload');
 // HistoryController
 Route::get('/histori', 'HistoryController@index')->name('histori');
 Route::get('/histori/edit/{proposalId}', 'HistoryController@editProposal')->name('editProposal');
+Route::get('/histori/edit/simpan/{id}', 'HistoryController@uploadEditProposal')->name('uploadEditProposal');
 Route::get('/histori/hapus/{proposalId}', 'HistoryController@hapusProposal')->name('hapusProposal');
 
 // CheckController
 Route::get('/check', 'CheckController@index')->name('check');
+Route::get('/accept', 'CheckController@accept')->name('checks');
+Route::get('/check/terima/{proposalId}', 'CheckController@terima')->name('terima');
 Route::get('/check/{proposalId}', 'CheckController@check')->name('download');
 
 // RevisiController

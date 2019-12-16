@@ -30,11 +30,11 @@
       <div class="container">
           <div class="card card-primary">        
                 <div class="card-header">
-                  <h3 class="card-title">Buat Pengajuan</h3>
+                  <h3 class="card-title">Edit Pengajuan</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="{{route('upload')}}" enctype="multipart/form-data">
+                <form role="form" action="{{route('uploadEditProposal', ['id' => $upload->id])}}" enctype="multipart/form-data">
 
                 {{csrf_field()}}
 
@@ -89,7 +89,7 @@
                   </div>
                   <!-- /.card-body -->
 
-                    <button type="submit" class="btn btn-success float-right buat" name="button">Ajukan</button>
+                    <button type="submit" class="btn btn-success float-right buat" name="button">Edit Proposal</button>
                 </form>
               </div>
       </div>
