@@ -42,6 +42,10 @@ class CheckController extends Controller
     public function terima($proposalId, Upload $upload){
         $row = Upload::all();
         $terima = $row->where('id', $proposalId)->first();
+
+        //update dari diproses jadi diterima
+        $terima->status = 'Diterima';
+        $terima->save();
         
         $a = $terima->judul;
         $b = $terima->jumlah;
@@ -54,7 +58,7 @@ class CheckController extends Controller
         
         $terima2->save();
 
-        return Redirect::to('checks');
+        return Redirect::to('accept');
     }
 
 

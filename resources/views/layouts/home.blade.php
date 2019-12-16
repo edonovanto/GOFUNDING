@@ -240,7 +240,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li> 
           <li class="nav-item">
-            <a href="{{route('checks')}}" class="nav-link">
+            <a href="{{route('accept')}}" class="nav-link">
             <i class="fas fa-user"></i>
               <p>
                 Proposal Diterima

@@ -45,7 +45,7 @@ Route::get('/histori/hapus/{proposalId}', 'HistoryController@hapusProposal')->na
 
 // CheckController
 Route::get('/check', 'CheckController@index')->name('check');
-Route::get('/accept', 'CheckController@accept')->name('checks');
+Route::get('/accept', 'CheckController@accept')->name('accept');
 Route::get('/check/terima/{proposalId}', 'CheckController@terima')->name('terima');
 Route::get('/check/{proposalId}', 'CheckController@check')->name('download');
 
