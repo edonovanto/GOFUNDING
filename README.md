@@ -8,6 +8,7 @@ Penggunaan GOFUNDING dapat mempermudah proses pengajuan proposal dana yang serin
 
 ## User Manual
 Click the link below to download the user manual book
+<br>
 <a href="https://drive.google.com/uc?export=download&id=1fqCRh4MKmzKOMSs-Tu_F02Ip27eIUWNW"> User Manual Book Download</a>
 
 ## Preview  of This Project
