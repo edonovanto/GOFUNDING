@@ -1,6 +1,12 @@
 
 ![GOFUNDING Web Project](https://github.com/edonovanto/GOFUNDING/blob/edo/public/images/GOFUNDLOGO.png)
 
+## About GOFUNDING
+GOFUNDING adalah website yang memberikan layanan pengajuan proposal bantuan dana secara online. Selain itu GOFUNDING juga memberikan informasi mengenai cara pembuatan proposal yang baik dan benar agar meningkatkan kemungkinan proposal diterima.
+Target pengguna GOFUNDING adalah mahasiswa, bidang akademik, dan organisasi mahasiswa yang mengatur kegiatan mahasiswa. Dalam kasus ini lingkup akademik yang digunakan adalah DTEDI SV UGM. Mahasiswa DTEDI, akademik DTEDI, dan KMTEDI.
+Penggunaan GOFUNDING dapat mempermudah proses pengajuan proposal dana yang seringkali memamakan waktu akibat revisi berulang. Dengan adanya GOFUNDING, mahasiswa dapat membuat sekaligus melihat progress pengajuan dana yang sedang dilakukannya.
+
+
 ## Preview  of This Project
 Click the picture below to see the preview on Youtube
 
