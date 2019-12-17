@@ -6,6 +6,9 @@ GOFUNDING adalah website yang memberikan layanan pengajuan proposal bantuan dana
 Target pengguna GOFUNDING adalah mahasiswa, bidang akademik, dan organisasi mahasiswa yang mengatur kegiatan mahasiswa. Dalam kasus ini lingkup akademik yang digunakan adalah DTEDI SV UGM. Mahasiswa DTEDI, akademik DTEDI, dan KMTEDI.
 Penggunaan GOFUNDING dapat mempermudah proses pengajuan proposal dana yang seringkali memamakan waktu akibat revisi berulang. Dengan adanya GOFUNDING, mahasiswa dapat membuat sekaligus melihat progress pengajuan dana yang sedang dilakukannya.
 
+## User Manual
+Click the link below to download the user manual book
+<a href="https://drive.google.com/uc?export=download&id=1fqCRh4MKmzKOMSs-Tu_F02Ip27eIUWNW"> User Manual Book Download</a>
 
 ## Preview  of This Project
 Click the picture below to see the preview on Youtube
