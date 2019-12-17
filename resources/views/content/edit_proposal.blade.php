@@ -30,11 +30,11 @@
       <div class="container">
           <div class="card card-primary">        
                 <div class="card-header">
-                  <h3 class="card-title">Buat Pengajuan</h3>
+                  <h3 class="card-title">Edit Pengajuan</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" method="post" action="{{route('upload')}}" enctype="multipart/form-data" onsubmit="return checkForm(this);">
+                <form role="form" action="{{route('uploadEditProposal', ['id' => $upload->id])}}" enctype="multipart/form-data">
 
                 {{csrf_field()}}
 
@@ -42,7 +42,7 @@
                     <div class="form-group">
                       <label>Judul Proposal</label>
 
-                      <input type="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul proposal" name="judul" value="{{ old('judul') }}">
+                      <input type="username" class="form-control" id="exampleInputEmail1" placeholder="Masukkan judul proposal" name="judul" value="{{ old('judul', $upload->judul) }}">
 
                       @if($errors->has('judul'))
                       <div class="text-danger">
@@ -57,7 +57,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text">Rp</span>
                       </div>
-                      <input type="text" class="form-control" placeholder="Masukkan jumlah yang diajukan" name="jumlah" value="{{ old('jumlah') }}">
+                      <input type="text" class="form-control" placeholder="Masukkan jumlah yang diajukan" name="jumlah" value="{{ old('jumlah',$upload->jumlah) }}">
                       <div class="input-group-append">
                         <span class="input-group-text">,00</span>
                       </div>
@@ -83,13 +83,13 @@
                         @endif
                     </div>
                     <div class="form-check">
-                      <input type="checkbox" class="form-check-input required" id="exampleCheck1" name="terms">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Saya telah mengisi format pengisian dengan benar </label>
                     </div>
                   </div>
                   <!-- /.card-body -->
 
-                    <button type="submit" class="btn btn-success float-right buat" name="button">Ajukan</button>
+                    <button type="submit" class="btn btn-success float-right buat" name="button">Edit Proposal</button>
                 </form>
               </div>
       </div>
@@ -102,20 +102,6 @@
           }
       }
   </script>
-
-<script>
-
-function checkForm(form)
-{
-  if(!form.terms.checked) {
-    alert("Centang box bila telah mengisis format dengan benar");
-    form.terms.focus();
-    return false;
-  }
-  return true;
-}
-
-</script>
 
   <script>
   $(document).ready(function(){

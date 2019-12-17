@@ -54,4 +54,9 @@ class HomeController extends Controller
     {
         return view('content.setting');
     }
+
+    public function revisi()
+    {
+        return view('content.revisi_siswa');
+    }
 }

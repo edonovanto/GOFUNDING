@@ -69,11 +69,4 @@ class BuatController extends Controller
         }
 
     }
-    
-    public function editProposal($proposalId, Upload $upload){
-        $upload = $upload->where('id', $proposalId)
-                         ->first();
-
-        return view('content.buat_proposal', ['upload' => $upload]);
-    }
 }

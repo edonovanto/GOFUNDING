@@ -1,6 +1,7 @@
 @extends('layouts.home',['module' => 'Upload'])
 
 @section('content_dashboard')
+
 <link rel="stylesheet" href="/css/history.css">
     <div class="container">
     <div class="row">
@@ -40,6 +41,15 @@
                                 <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;" name="download">Download PDF</button>
                             </a>
                             </td>
+                            <td>
+                            <a href="{{route('terima', ['proposalId' => $row->id])}}">
+                                <button type="button" class="fas fa-times btn btn-success" data-toggle="modal">Terima</button>
+                            </a>
+                            <button type="button" class="fas fa-times btn btn-danger">Tolak</button>
+                            <a href="{{route('revisiProposal', ['proposalId' => $row->id])}}">
+                                <button type="button" class="btn btn-warning">Revisi</button>
+                            </a>
+                            </td>
                             <td>&nbsp;</td>
                         </tr>
                         @endforeach
@@ -59,6 +69,26 @@
           </div>
     </div>
 
+    <!-- Modal Terima -->
+    <!-- <div class="modal fade" id="terima" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Proposal telah diterima dan diteruskan ke Dosen
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div> -->
 
 
 <script>

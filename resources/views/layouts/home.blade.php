@@ -154,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/images/edo2.JPG" class="img-circle elevation-2" alt="User Image">
+          <img src="/images/user.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block"> Hallo {{ Auth::user()->name }} !</a>
@@ -202,6 +202,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
           @endcan
           @can('isSiswa')
           <li class="nav-item">
+            <a href="{{route('revisi_siswa') }}" class="nav-link">
+              <i class="fas fa-copy"></i>
+              <p>
+                Revisi Proposal
+              </p>
+            </a>
+          </li> 
+          @endcan
+          @can('isSiswa')
+          <li class="nav-item">
             <a href="{{route('profile')}}" class="nav-link">
             <i class="fas fa-user"></i>
               <p>
@@ -226,6 +236,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <i class="fas fa-user"></i>
               <p>
                 Proposal Diajukan
+              </p>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a href="{{route('accept')}}" class="nav-link">
+            <i class="fas fa-user"></i>
+              <p>
+                Proposal Diterima
               </p>
             </a>
           </li> 

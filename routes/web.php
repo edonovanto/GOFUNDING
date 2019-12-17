@@ -31,17 +31,26 @@ Route::get('/home', 'HomeController@home')->name('home2');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/histori', 'HomeController@histori')->name('histori');
 Route::get('/setting', 'HomeController@setting')->name('setting');
+// Route::get('/revisi', 'HomeController@revisi')->name('revisi_siswa');
 
 // BuatController
 Route::get('/buat', 'BuatController@index')->name('buat');
 Route::post('/buat/upload', 'BuatController@upload')->name('upload');
-Route::get('/buat/{proposalId}', 'BuatController@editProposal')->name('editProposal');
 
 // HistoryController
 Route::get('/histori', 'HistoryController@index')->name('histori');
-Route::get('/histori/ubah', 'HistoryController@ubah')->name('ubah');
+Route::get('/histori/edit/{proposalId}', 'HistoryController@editProposal')->name('editProposal');
+Route::get('/histori/edit/simpan/{id}', 'HistoryController@uploadEditProposal')->name('uploadEditProposal');
+Route::get('/histori/hapus/{proposalId}', 'HistoryController@hapusProposal')->name('hapusProposal');
 
 // CheckController
 Route::get('/check', 'CheckController@index')->name('check');
+Route::get('/accept', 'CheckController@accept')->name('accept');
+Route::get('/check/terima/{proposalId}', 'CheckController@terima')->name('terima');
 Route::get('/check/{proposalId}', 'CheckController@check')->name('download');
 
+// RevisiController
+Route::get('/revisi_siswa', 'RevisiController@index')->name('revisi_siswa');
+Route::post('/check/upload', 'RevisiController@revisi')->name('revisi');
+Route::get('/check/revisi/{proposalId}', 'RevisiController@form_revisi')->name('revisiProposal');
+Route::get('/check/download/{proposalId}', 'RevisiController@check')->name('download');
